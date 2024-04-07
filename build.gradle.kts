@@ -25,6 +25,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
 tasks.withType<KotlinCompile> {
