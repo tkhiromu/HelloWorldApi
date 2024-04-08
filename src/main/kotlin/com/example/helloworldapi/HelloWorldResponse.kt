@@ -1,4 +1,4 @@
-package com.example.HelloWorldApi
+package com.example.helloworldapi
 
 import kotlinx.serialization.Serializable
 
