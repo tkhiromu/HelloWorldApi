@@ -1,5 +1,6 @@
 package com.example.HelloWorldApi
 
+import jakarta.validation.Valid
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.springframework.web.bind.annotation.GetMapping
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 class HelloWorldController {
 
     @GetMapping("/hello")
-    fun hello(@RequestBody request: HelloWorldRequest): String {
+    fun hello(@Valid @RequestBody request: HelloWorldRequest): String {
         return Json.encodeToString(HelloWorldResponse.responseOf(request))
     }
 }
