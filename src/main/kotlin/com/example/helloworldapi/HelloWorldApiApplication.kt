@@ -1,4 +1,4 @@
-package com.example.HelloWorldApi
+package com.example.helloworldapi
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
