@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class HelloWorldController {
+class HelloWorldController(private val appProperties: AppProperties) {
 
     @GetMapping("/hello")
     fun hello(@Valid @RequestBody request: HelloWorldRequest): HelloWorldResponse {
-        return HelloWorldResponse.responseOf(request)
+        return HelloWorldResponse.responseOf(request, appProperties.text)
     }
 }
