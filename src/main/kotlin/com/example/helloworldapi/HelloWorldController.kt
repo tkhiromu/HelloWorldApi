@@ -12,7 +12,6 @@ class HelloWorldController {
     @GetMapping("/hello")
     fun hello(@Valid @RequestBody request: HelloWorldRequest): HelloWorldResponse {
         logger.debug("Received name: ${request.name}")
-        logger.info("Returning response")
         return HelloWorldResponse.responseOf(request)
     }
 
