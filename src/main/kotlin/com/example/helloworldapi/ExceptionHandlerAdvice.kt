@@ -39,7 +39,7 @@ class ExceptionHandlerAdvice {
     }
 
     @ExceptionHandler(Exception::class)
-    fun handleException(ex: Exception): ResponseEntity<Map<String, Any>> {
+    fun handleException(ex: Exception): ResponseEntity<Map<String, String>> {
         val body = mapOf("reason" to "something wrong ;-(")
 
         return ResponseEntity.status(500).body(body)
