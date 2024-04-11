@@ -1,8 +1,10 @@
-text: "my_best_friend"
+app:
+  text: "my_best_friend"
 
 ---
 spring:
   config:
     activate:
       on-profile: dev
-text: "my_dev_friend"
+app:
+  text: "my_dev_friend"
