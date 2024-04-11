@@ -1,4 +1,8 @@
 spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 10s # デフォ30sだがそんな遅いAPIではないので10sに変更
+  server:
+    shutdown: graceful
   profiles:
     active: dev
     logging:
