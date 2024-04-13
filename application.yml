@@ -1,4 +1,12 @@
 spring:
+  management:
+    endpoint:
+      health:
+        show-details: always
+  lifecycle:
+    timeout-per-shutdown-phase: 10s # デフォ30sだがそんな遅いAPIではないので10sに変更
+  server:
+    shutdown: graceful
   web:
     resources:
       add-mappings: false
