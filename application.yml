@@ -1,11 +1,27 @@
 spring:
   web:
     resources:
-      add-mappings: false # 静的リソースの自動マッピングを無効化 エラーのレスポンス内容をカスタマイズするために必要
+      add-mappings: false
   mvc:
-    throw-exception-if-no-handler-found: true # ハンドラーが見つからない場合に例外をスロー これ設定しないと例外投げない
-  profiles:
-    active: dev
-    logging:
-      level:
-        com.example.helloworldapi: DEBUG
+    throw-exception-if-no-handler-found: true
+  logging:
+    level:
+      com.example.helloworldapi: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+app:
+  text: "my_dev_friend"
+  # 開発環境で適用されるその他の設定
+
+---
+spring:
+  config:
+    activate:
+      on-profile: !dev
+app:
+  text: "my_best_friend"
+  # dev以外で適用されるその他の設定
