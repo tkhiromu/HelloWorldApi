@@ -8,8 +8,8 @@ class HelloWorldResponse private constructor(
 ) {
     // インスタンスの作成にロジックや処理が入るからファクトリメソッドにした
     companion object {
-        fun responseOf (request: HelloWorldRequest): HelloWorldResponse {
-            return HelloWorldResponse(message = "Hello, " + request.name)
+        fun responseOf (request: HelloWorldRequest, text: String): HelloWorldResponse {
+            return HelloWorldResponse(message = "Hello, $text" + request.name)
         }
     }
 }

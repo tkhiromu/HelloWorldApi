@@ -7,8 +7,29 @@ spring:
     timeout-per-shutdown-phase: 10s # デフォ30sだがそんな遅いAPIではないので10sに変更
   server:
     shutdown: graceful
-  profiles:
-    active: dev
-    logging:
-      level:
-        com.example.helloworldapi: DEBUG
+  web:
+    resources:
+      add-mappings: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+  logging:
+    level:
+      com.example.helloworldapi: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+app:
+  text: "my_dev_friend"
+  # 開発環境で適用されるその他の設定
+
+---
+spring:
+  config:
+    activate:
+      on-profile: !dev
+app:
+  text: "my_best_friend"
+  # dev以外で適用されるその他の設定
