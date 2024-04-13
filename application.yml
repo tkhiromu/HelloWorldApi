@@ -25,8 +25,3 @@ spring:
 app:
   text: "my_best_friend"
   # dev以外で適用されるその他の設定
-
----
-app:
-  text: "common_setting"
-  # 全環境共通で適用される設定
